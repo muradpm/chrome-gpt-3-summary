@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 400px;
+  margin: 16px;
+}
+
+button {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#summary-container {
+  display: none;
+  margin-top: 16px;
+}
+
+#summary {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
