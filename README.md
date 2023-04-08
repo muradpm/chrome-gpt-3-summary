@@ -47,4 +47,12 @@ This is a Chrome extension that uses ChatGPT to generate summaries of webpages. 
 - ChatGPT API: https://platform.openai.com/docs/introduction
 
 ## License
+
 This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+
+## Contact
+
+If you have any questions, feel free to reach out to me:
+
+- LinkedIn: (https://www.linkedin.com/in/abdulkadyr0v/)
+- Twitter: (https://twitter.com/abdulkadyr0v)
