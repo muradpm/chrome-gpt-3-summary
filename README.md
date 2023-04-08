@@ -15,9 +15,9 @@ This is a Chrome extension that uses ChatGPT to generate summaries of webpages. 
 
 2. Open the Chrome Extensions page.
 
-3. Enable Developer mode by clicking the toggle in the top-right corner.
+3. Enable Developer mode by clicking the toggle in the top-right corner.
 
-4. Click "Load unpacked" and select the cloned repository folder.
+4. Click "Load unpacked" and select the cloned repository folder.
 
 ## Usage
 
