@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="GPT-4 Suite - Summarize everything!" src="./preview/public/gpt-suite.png" width="128" height="128">
+  <img alt="GPT-4 Suite - Summarize everything!" src="./preview/public/gpt-suite.png">
   <h1 align="center">GPT Summary</h1>
 </p>
 
