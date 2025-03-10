@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Initialize UI
 document.addEventListener("DOMContentLoaded", async () => {
   // Load configuration from storage
@@ -67,6 +68,16 @@ document.getElementById("summarize").addEventListener("click", async () => {
     '<div class="loading">Generating summary...</div>';
   document.getElementById("summary-container").style.display = "block";
   document.getElementById("facts-list").innerHTML = "";
+=======
+document.getElementById("summarize").addEventListener("click", async () => {
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+  // Add this event listener at the end of popup.js
+  document.getElementById("copy").addEventListener("click", () => {
+    const summaryText = document.getElementById("summary").innerText;
+    navigator.clipboard.writeText(summaryText).then(() => {});
+  });
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
 
   chrome.scripting.executeScript(
     {
@@ -79,6 +90,7 @@ document.getElementById("summarize").addEventListener("click", async () => {
   );
 });
 
+<<<<<<< HEAD
 // Refresh button click handler
 document.getElementById("refresh").addEventListener("click", async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -298,5 +310,24 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       // Save to history
       saveSummaryToHistory(request.summary, pageTitle);
     });
+=======
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "displaySummary") {
+    document.getElementById("summary").innerText = request.summary;
+    document.getElementById("summary-container").style.display = "block";
+  }
+});
+
+const port = chrome.runtime.connect({ name: "summary" });
+
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  const tabId = tabs[0].id;
+  port.postMessage({ action: "getSummary", tabId });
+});
+
+port.onMessage.addListener((msg) => {
+  if (msg.action === "displaySummary" && msg.summary) {
+    document.getElementById("summary").innerText = msg.summary;
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
   }
 });

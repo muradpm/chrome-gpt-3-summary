@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Initialize storage when extension is installed
 chrome.runtime.onInstalled.addListener(() => {
   console.log("GPT-4 Webpage Summarizer installed");
@@ -17,6 +18,8 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 // Handle messages from popup and content scripts
+=======
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
 chrome.runtime.onConnect.addListener((port) => {
   port.onMessage.addListener((msg) => {
     if (msg.action === "getSummary") {
@@ -31,6 +34,7 @@ chrome.runtime.onConnect.addListener((port) => {
     }
   });
 });
+<<<<<<< HEAD
 
 // Listen for tab updates to clear cached summaries when navigating to new pages
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
@@ -53,3 +57,5 @@ chrome.contextMenus?.onClicked.addListener((info, tab) => {
     console.log("Selected text:", info.selectionText);
   }
 });
+=======
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38

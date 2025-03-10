@@ -1,5 +1,6 @@
 {
   "manifest_version": 3,
+<<<<<<< HEAD
   "name": "GPT-4 Suite - Summarize everything!",
   "version": "1.0",
   "description": "A Chrome extension that uses GPT-4 to summarize webpages with a modern UI.",
@@ -10,6 +11,18 @@
     }
   },
   "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+=======
+  "name": "ChatGPT Webpage Summarizer",
+  "version": "1.0",
+  "description": "A Chrome extension that uses ChatGPT to summarize webpages.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "512": "/icons/icon_512.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -20,6 +33,10 @@
     "service_worker": "/scripts/background.js"
   },
   "icons": {
+<<<<<<< HEAD
     "512": "/icons/icon.png"
+=======
+    "512": "/icons/icon_512.png"
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
   }
 }

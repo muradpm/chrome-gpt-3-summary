@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 // Content script for the extension
 // This script is injected into web pages to extract and summarize content
 
+=======
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
 function splitTextIntoSections(text, maxSectionLength) {
   const sections = [];
   let sectionStart = 0;
@@ -50,7 +53,13 @@ function truncateText(html, maxLength) {
 
 function postProcessSummary(summary) {
   // Remove extra spaces and fix punctuation
+<<<<<<< HEAD
   let cleanedSummary = summary.replace(/\s{2,}/g, " ").replace(/([.,!?])\s/g, "$1");
+=======
+  let cleanedSummary = summary
+    .replace(/\s{2,}/g, " ")
+    .replace(/([.,!?])\s/g, "$1");
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
 
   // Insert line breaks between sentences
   cleanedSummary = cleanedSummary.replace(/([.!?]) (?=[A-Z])/g, "$1\n\n");
@@ -63,6 +72,7 @@ function postProcessSummary(summary) {
 }
 
 async function summarizePage() {
+<<<<<<< HEAD
   try {
     // Get configuration from storage
     chrome.storage.local.get("config", async (result) => {
@@ -152,6 +162,43 @@ async function summarizePage() {
       summary: `Error: ${error.message}. Please try again later.`,
     });
   }
+=======
+  const apiKey = "your_api_key";
+  const apiUrl = "https://api.openai.com/v1/engines/davinci/completions";
+
+  const pageTitle = document.title;
+  const pageHtml = document.documentElement.outerHTML;
+  const truncatedText = truncateText(pageHtml, 4096);
+  const prompt = `Please provide a concise, accurate, and informative summary of the following webpage titled "${pageTitle}":\n\n${truncatedText}`;
+
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      prompt,
+      max_tokens: 200,
+      n: 1,
+      temperature: 0.7,
+    }),
+  });
+
+  if (response.status === 400) {
+    alert("Error: Bad request. Please check the input data.");
+    return;
+  }
+
+  const data = await response.json();
+  const summary = data.choices[0].text.trim();
+  const cleanedSummary = postProcessSummary(summary);
+
+  chrome.runtime.sendMessage({
+    action: "displaySummary",
+    summary: cleanedSummary,
+  });
+>>>>>>> 87edad9c5960e094a2c7d5193977368224fb1e38
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
