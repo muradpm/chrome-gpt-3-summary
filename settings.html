@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPT-4 Suite - Settings</title>
+    <link rel="stylesheet" href="/styles/popup.css" />
+    <link rel="stylesheet" href="/styles/settings.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <span class="icon">💬</span>
+        <h1>GPT-4 Suite - Settings</h1>
+      </div>
+      <div class="settings">
+        <button id="back-btn" class="icon-btn"><i class="fas fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="settings-container">
+        <h2>API Configuration</h2>
+        <div class="form-group">
+          <label for="api-key">OpenAI API Key</label>
+          <input type="password" id="api-key" placeholder="Enter your OpenAI API key" />
+          <button id="show-hide-key" class="icon-btn"><i class="far fa-eye"></i></button>
+        </div>
+        <div class="form-group">
+          <label for="model">Model</label>
+          <select id="model">
+            <option value="gpt-4o">GPT-4o</option>
+            <option value="gpt-4o-mini">GPT-4o Mini</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="max-tokens">Max Tokens</label>
+          <input type="number" id="max-tokens" min="100" max="2000" value="800" />
+        </div>
+        <div class="form-group">
+          <label for="temperature">Temperature</label>
+          <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.5" />
+          <span id="temperature-value">0.5</span>
+        </div>
+        <button id="save-settings" class="action-btn">Save Settings</button>
+        <div id="status-message"></div>
+      </div>
+    </div>
+
+    <script src="/scripts/settings.js"></script>
+  </body>
+</html>

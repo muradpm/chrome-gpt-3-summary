@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "GPT-4 Suite - Summarize everything!",
+  "version": "1.0",
+  "description": "A Chrome extension that uses GPT-4 to summarize webpages with a modern UI.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "512": "/icons/icon.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/scripts/content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "/scripts/background.js"
+  },
+  "icons": {
+    "512": "/icons/icon.png"
+  }
+}

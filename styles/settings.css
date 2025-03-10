@@ -1,0 +1,85 @@
+.settings-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.settings-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input[type="password"],
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="password"],
+.form-group input[type="text"] {
+  padding-right: 40px; /* Space for the eye icon */
+}
+
+.form-group input[type="range"] {
+  width: calc(100% - 40px);
+  margin-right: 10px;
+}
+
+#temperature-value {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+#show-hide-key {
+  position: absolute;
+  right: 5px;
+  top: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+#status-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  display: none;
+}
+
+#status-message.success {
+  background-color: #e6f7e6;
+  color: #2e7d32;
+  display: block;
+}
+
+#status-message.error {
+  background-color: #fdecea;
+  color: #c62828;
+  display: block;
+}
