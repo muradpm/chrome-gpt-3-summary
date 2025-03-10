@@ -1,6 +1,6 @@
 <p align="center">
-  <img alt="GPT-4 Suite - Summarize everything!" src="./preview/public/gpt-suite.png" width="128" height="128">
-  <h1 align="center">GPT Summary</h1>
+  <img alt="Chrome GPT Summary Extension" src="./icons/icon.png" width="200" style="border-radius: 24px; margin: 20px 0;">
+  <h1 align="center">Chrome GPT Summary</h1>
 </p>
 
 <p align="center">
